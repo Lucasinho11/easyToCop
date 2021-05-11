@@ -1,3 +1,4 @@
+/* Menu Navigation */
 .bg-nav{
     --tw-bg-opacity: 1;
     background-color: #000000;
@@ -19,6 +20,9 @@
 }
 .input-search{
     border-radius: 5px 0px 0px 5px;
+}
+.bg-nav{
+    border-bottom: 2px solid #919191;
 }
 @media (max-width: 640px) {
     .logo-menu{
