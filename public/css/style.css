@@ -218,3 +218,98 @@
     width: 25%;
     margin-right: 5%;
 }
+@media (max-width: 640px) {
+    .text-main{
+        background-color: #000000;
+        text-align: center;
+        height: 92vh;
+        border-bottom: 10px solid #5D19FF;
+    }
+    .h1-main{
+        padding-top: 30vh;
+        color: #36FFB0;
+        font-weight: bold;
+        font-size: 35px;
+    }
+    .p-main{
+        color: white;
+        font-size: 15px;
+        
+    }
+    .div-subs-index{
+        display: flex;
+        flex-direction: column;
+  
+    }
+    .premium-vip{
+        margin-top: 10vh;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        text-align: center;
+    }
+  .subs-title{
+      margin-top: 2%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+  }
+  .vip > h2, .premium > h2{
+      font-size: 25px;
+      font-weight: bold;
+  }
+  .buttons-subs-index{
+      margin-top: 5vh;
+      background-color: #5D19FF;
+      text-align: center;
+      color: white;
+      width: 45%;
+      border-radius: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 15px;
+  }
+  .vip{
+      margin-top: 5vh;
+  }
+  .top5-news{
+      margin-top: 10%;
+  }
+  .top5-news > h1{
+      font-weight: bold;
+      font-size: 30px;
+      text-align: center;
+  }
+  
+  .new-actu > h2{
+      text-align: center;
+  }
+  .details-actu{
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2%;
+  }
+  .new-actu{
+      margin-top: 5%;
+  }
+  .new-actu > h2{
+      font-size: 20px;
+  }
+  .description-new{
+      text-align: center;
+      margin-left: 14%;
+  
+  }
+  .description-new>p{
+      margin-top: 35%;
+      font-size: 10px;
+  }
+  .img-new > img{
+      width: 100%;
+  
+  }
+  .img-new{
+    margin-top: 10%;
+      width: 20%;
+  }
+}
