@@ -5,7 +5,7 @@
 }
 .bg-nav{
     --tw-bg-opacity: 1;
-    background-color: #000000;
+    background-color: #111111;
 }
 .h1-menu{
     color: #36FFB0;
@@ -42,7 +42,7 @@
   }
   /* Footer */
   .all-footer{
-    background-color: #000000;
+    background-color: #111111;
     border-top: 2px solid #919191;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -78,18 +78,19 @@
     font-size: 30px;
 }
 .copyright{
-    background-color: #000000;
+    background-color: #111111;
     text-align: center;
     color: white;
     font-size: 15px;
 }
 @media (max-width: 640px) {
     .all-footer{
-        background-color: #000000;
+        background-color: #111111;
         border-top: 2px solid #919191;
         padding-top: 2%;
         padding-bottom: 2%;
         color: white;
+        
       }
       .footer{
         
@@ -121,7 +122,7 @@
         font-size: 10px;
     }
     .copyright{
-        background-color: #000000;
+        background-color: #111111;
         text-align: center;
         color: white;
         font-size: 5px;
@@ -135,9 +136,9 @@
 }
   /* Index */
   .text-main{
-      background-color: #000000;
+      background-color: #111111;
       text-align: center;
-      height: 92vh;
+      height: 100vh;
       border-bottom: 10px solid #5D19FF;
   }
   .h1-main{
@@ -178,9 +179,9 @@
     color: white;
     width: 20%;
     border-radius: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     font-size: 25px;
+
 }
 .top5-news{
     margin-top: 10%;
@@ -224,7 +225,7 @@
 }
 @media (max-width: 640px) {
     .text-main{
-        background-color: #000000;
+        background-color: #111111;
         text-align: center;
         height: 92vh;
         border-bottom: 10px solid #5D19FF;
@@ -316,4 +317,87 @@
     margin-top: 10%;
       width: 20%;
   }
+}
+/* DROPS */
+.pres-drops{
+    background-color: #111111;
+    height: 70vh;
+    padding-top: 35vh;
+}
+.pres-drops > h1{
+    color: #36FFB0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.drop-date{
+    background-color: #36FFB0;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    border-bottom: 2px solid gray;
+    padding-left: 2%;
+}
+.drop >div> h1{
+    padding-left: 2%;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+.drop >div> p{
+    padding-top: 3%;
+    padding-left: 2%;
+    font-size: 20px;
+    color: black;
+}
+.drop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+}
+.img-drop-img{
+    width: 400px;
+}
+.drop-container{
+    height: 85vh;
+    padding-top: 10%;
+}
+.text-drops{
+    padding-left: 2%;
+}
+.img-drop{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.text-drops > h1{
+    padding-left: 2%;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+.text-drops > p{
+    padding-left: 2%;
+    font-size: 20px;
+    color: black;
+}
+.buttons-subs-drop{
+    margin-top: 2vh;
+    background-color: #5D19FF;
+    text-align: center;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.img-drop > p{
+    font-weight: bold;
+    font-size: 20px;
 }

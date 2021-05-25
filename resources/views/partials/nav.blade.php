@@ -28,10 +28,12 @@
         </button>
       </div>
       <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+        <a href="/">
         <div class="flex-shrink-0 flex items-center">
           <img class="block lg:hidden h-8 w-auto" src="/img/logo.png" alt="E2C">
           <img class="hidden lg:block h-12 w-auto" src="/img/logo.png" alt="E2C" class="logo-menu"><h1 class="h1-menu">EasyToCop</h1>
         </div>
+        </a>
         
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -47,7 +49,7 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="color: white;">Drops</a>
+            <a href="/drops" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="color: white;">Drops</a>
 
             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="color: white;">Actualité</a>
 
@@ -92,7 +94,7 @@
   <div class="sm:hidden hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" style="color: white;">Drops</a>
+      <a href="/drops" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" style="color: white;">Drops</a>
 
       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" style="color: white;">Actualité</a>
 

@@ -8,25 +8,12 @@
         Avec nos services, tu as beaucoup plus de chance<br>
         de cop ta paire de speakers préférée !
     </p>
-</div>
-<div class="div-subs-index">
-    <h1 class="subs-title">Nos abonnements:</h1>
-    <div class="premium-vip">
-        <div class="premium">
-            <h2>Abonnement Premium:</h2>
-            <p>Pour 5,99€ tu as accès à plusieurs drops. </p>
-        </div>
-        <div class="vip">
-            <h2>Abonnement V.I.P:</h2>
-            <p>Pour 19,99€ tu as accès à tous les drops <br>et tu reçois une box spéciale par ans !</p>
-        </div>
-    </div>
-    <div class="flex justify-center">
+    <br>
+    <br>
         <a href="#" class="buttons-subs-index">
             Voir les abonnements
         </a>
-    </div>
-    
+
 </div>
 <div class="top5-news">
     <h1>Les dernières news:</h1>
