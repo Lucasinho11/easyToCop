@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 Route::get('/drops', 'App\Http\Controllers\DropsController@index');
 Route::get('/drops/{id}', 'App\Http\Controllers\DropsController@drop');
+Route::get('/actus', 'App\Http\Controllers\ActusController@index');
+Route::get('/actus/{id}', 'App\Http\Controllers\ActusController@actu');

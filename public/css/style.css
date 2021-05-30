@@ -439,6 +439,43 @@
     .img-drop-img2{
         margin-top: 10vh;
     }
-    
+}
+/* ACTUS */
+.actus-container{
+    height: 100vh;
+    padding-top: 10%;
+    display: flex;
+    justify-content: center;
 
+}
+.actu{
+    border: gray 1px solid;
+    border-radius: 5px;
+    width: 1000px;
+
+}
+.actu-img{
+  
+}
+.img-actu{
+    width: 100%;
+}
+.img-title-actu{
+    width: 5%;
+}
+.actu-title{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+}
+.actu-title > h1{
+    padding-left: 1%;
+}
+.actu-more > p{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
