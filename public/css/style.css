@@ -401,3 +401,44 @@
     font-weight: bold;
     font-size: 20px;
 }
+.img-drop-img2{
+    width: 500px;
+}
+@media (max-width: 640px) {
+    .pres-drops{
+        height: 60vh;
+        padding-top: 30vh; 
+    }
+    .pres-drops > h1{
+        font-size: 25px;
+    }
+    .drop-date > h1{
+        font-size: 20px;
+    }
+    .drop > div > p{
+        font-size: 15px;
+    }
+    .drop > div > h1{
+        font-size: 20px;
+    }
+    .img-drop-img{
+        width: 200px;
+    }
+    .img-drop-img2{
+        width: 300px;
+    }
+    .drop-container{
+        padding-top: 15vh;
+    }
+    .text-drops > p{
+        font-size: 15px;
+    }
+    .text-drops > h1{
+        font-size: 25px;
+    }
+    .img-drop-img2{
+        margin-top: 10vh;
+    }
+    
+
+}

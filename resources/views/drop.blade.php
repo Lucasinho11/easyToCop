@@ -7,7 +7,7 @@
         <h1>MILITARY BLUE</h1>
     </div>
     <div class="img-drop">
-        <img class="img-drop-img" src="/img/aj4.png"  alt="">
+        <img class="img-drop-img2" src="/img/aj4.png"  alt="">
         <br><br>
         <p>Prix: 120€</p>
         <a href="#" class="buttons-subs-drop">
@@ -16,4 +16,5 @@
     </div>
 
 </div>
+<br><br>
 @include('partials.footer')
