@@ -11,7 +11,8 @@
             <img class="img-actu" src="/img/wallpaper.jpeg"  alt="">
         </div>
         <div class="actu-more">
-            <p>Lire la suite</p>
+            <a href="/actus/1"><p>Lire la suite</p></a>
+            
         </div>
     </div>
 
