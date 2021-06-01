@@ -14,4 +14,5 @@ class DropsController extends Controller
     {
         return view('drop');
     }
+
 }

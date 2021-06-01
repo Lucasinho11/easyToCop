@@ -554,3 +554,141 @@
 
     }
 }
+/* SUBS */
+
+.subs-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 1%;
+}
+.subs-title{
+    text-align: center;
+}
+.premium-sub, .vip-sub{
+    width: 300px;
+    height: 350px;
+}
+.all-subs-container{
+    padding-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.button-sub{
+    margin-top: 2vh;
+    background-color: #5D19FF;
+    text-align: center;
+    color: white;
+    width: 150px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.premium-sub-title, .vip-sub-title{
+    border: gray 1px solid;
+    border-radius: 5px 5px 0px 0px;
+    height: 175px;
+}
+.premium-sub-details, .vip-sub-details{
+    height: 175px;
+    background-color: whitesmoke;
+    border-bottom: gray 1px solid;
+    border-left: gray 1px solid;
+    border-right: gray 1px solid;
+    border-radius: 0px 0px 5px 5px;
+}
+.premium-sub-title >h1 , .vip-sub-title >h1{
+    padding-left: 5%;
+    font-size: 30px;
+    font-weight: bold;
+}
+.premium-sub-title >p , .vip-sub-title >p{
+    padding-left: 5%;
+    font-size: 25px;
+}
+.div-sub-button{
+    display: flex;
+    justify-content: center;
+}
+.premium-sub-details > h1, .vip-sub-details > h1{
+    padding-left: 5%;
+    padding-top: 5%;
+    font-size: 20px;
+}
+.premium-sub-details > p, .vip-sub-details > p{
+    padding-left: 5%;
+    font-size: 20px;
+}
+@media (max-width: 640px) {
+    .subs-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1%;
+    }
+    .subs-title{
+        text-align: center;
+    }
+    .premium-sub, .vip-sub{
+        width: 250px;
+        height: 300px;
+    }
+    .all-subs-container{
+        padding-top: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .button-sub{
+        margin-top: 2vh;
+        background-color: #5D19FF;
+        text-align: center;
+        color: white;
+        width: 150px;
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 15px;
+    }
+    .premium-sub-title, .vip-sub-title{
+        border: gray 1px solid;
+        border-radius: 5px 5px 0px 0px;
+        height: 150px;
+    }
+    .premium-sub-details, .vip-sub-details{
+        height: 150px;
+        background-color: whitesmoke;
+        border-bottom: gray 1px solid;
+        border-left: gray 1px solid;
+        border-right: gray 1px solid;
+        border-radius: 0px 0px 5px 5px;
+    }
+    .premium-sub-title >h1 , .vip-sub-title >h1{
+        padding-left: 5%;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .premium-sub-title >p , .vip-sub-title >p{
+        padding-left: 5%;
+        font-size: 20px;
+    }
+    .div-sub-button{
+        display: flex;
+        justify-content: center;
+    }
+    .premium-sub-details > h1, .vip-sub-details > h1{
+        padding-left: 5%;
+        padding-top: 5%;
+        font-size: 17px;
+    }
+    .premium-sub-details > p, .vip-sub-details > p{
+        padding-left: 5%;
+        font-size: 17px;
+    }
+    .vip-sub{
+        margin-top: 5%;
+    }
+}
