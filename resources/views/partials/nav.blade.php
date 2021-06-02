@@ -55,7 +55,7 @@
 
             <a href="/subs" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="color: white;">Abonnement</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="color: white;">Contact</a>
+            <a href="/contacts" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style="color: white;">Contact</a>
           </div>
         </div>
         <div class="ml-3 relative">
@@ -100,7 +100,7 @@
 
       <a href="/subs" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" style="color: white;">Abonnement</a>
 
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" style="color: white;">Contact</a>
+      <a href="/contacts" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" style="color: white;">Contact</a>
     </div>
   </div>
 </nav>

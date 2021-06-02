@@ -692,3 +692,76 @@
         margin-top: 5%;
     }
 }
+/* CONTACTS */
+.all-contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+}
+.div-contacts{
+    text-align: center;
+}
+.google-map{
+    width: 60vw;
+    height: 40vh;
+    background-color: gray;
+    border-radius: 5px;
+}
+.contact-form > h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+.contact-form > div{
+    border: 2px solid #707070;
+    border-radius: 10px;
+    height: 47vh;
+    width: 50vw;
+}
+.contact-form > div > form > div > div >input{
+    border: 1px solid #707070;
+    border-radius: 5px;
+
+}
+.contact-form > div > form > div >input{
+    border: 1px solid #707070;
+    border-radius: 5px;
+
+}
+.contact-form > div > form > div >textarea{
+    border: 1px solid #707070;
+    border-radius: 5px;
+
+}
+.names{
+    display: flex;
+    justify-content: space-between;
+}
+.contact-form > div > form{
+    padding: 20px;
+}
+.email-send{
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+}
+.email-send > textarea{
+    width: 250%;
+}
+.buttons-send-email{
+    background-color: #5D19FF;
+    text-align: center;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+.div-button-email{
+    display: flex;
+    justify-content: center;
+}
