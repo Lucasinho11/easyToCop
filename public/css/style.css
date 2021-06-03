@@ -621,6 +621,22 @@
     padding-left: 5%;
     font-size: 20px;
 }
+.all-sub{
+    padding-top: 10%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.all-sub > h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+.all-sub > h2{
+    font-size: 30px;
+    font-weight: bold;
+}
 @media (max-width: 640px) {
     .subs-container{
         display: flex;
@@ -691,7 +707,25 @@
     .vip-sub{
         margin-top: 5%;
     }
+    .all-sub{
+        padding-top: 20%;
+        padding-bottom: 20%;
+        height: 90vh;
+    }
+    .all-sub > h1{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .all-sub > h2{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .all-sub > h2{
+        font-size: 20px;
+    }
 }
+
+
 /* CONTACTS */
 .all-contacts{
     display: flex;
