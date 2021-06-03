@@ -21,3 +21,5 @@ Route::get('/actus/{id}', 'App\Http\Controllers\ActusController@actu');
 Route::get('/subs', 'App\Http\Controllers\SubsController@index');
 Route::get('/subs/{id}', 'App\Http\Controllers\SubsController@sub');
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@index');
+Route::get('/register', 'App\Http\Controllers\LoginController@register');
+Route::get('/login', 'App\Http\Controllers\LoginController@login');
