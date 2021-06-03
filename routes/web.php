@@ -23,3 +23,4 @@ Route::get('/subs/{id}', 'App\Http\Controllers\SubsController@sub');
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@index');
 Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
+Route::get('/user', 'App\Http\Controllers\UserController@index');
