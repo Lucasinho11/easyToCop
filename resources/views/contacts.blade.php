@@ -30,7 +30,7 @@
                         <label for="object">Objet:</label>
                         <input type="text" name="object">
                         <label for="msg-email">Message:</label>
-                        <textarea name="msg-email" id="" rows="5"></textarea>
+                        <textarea name="msg-email" id="" rows="3"></textarea>
                 </div>
                 <br>
                 <div class="div-button-email">   

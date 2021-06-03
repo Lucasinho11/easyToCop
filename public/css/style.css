@@ -716,7 +716,7 @@
 .contact-form > div{
     border: 2px solid #707070;
     border-radius: 10px;
-    height: 47vh;
+    height: 42vh;
     width: 50vw;
 }
 .contact-form > div > form > div > div >input{
@@ -764,4 +764,31 @@
 .div-button-email{
     display: flex;
     justify-content: center;
+}
+@media (max-width: 640px) {
+    .contact-form > div{
+        border: 2px solid #707070;
+        border-radius: 10px;
+        height: 50vh;
+        width: 70vw;
+    }
+    .names{
+        display: flex;
+        flex-direction: column;
+    }
+    .names > div > input{
+        width: 47vw;
+    }
+    .names > div{
+        padding-top: 1%;
+    }
+    .email-send > input{
+        width: 47vw;
+    }
+    .all-contacts{
+        padding-top: 20%;
+    }
+    .contact-form > h1{
+        font-size: 20px;
+    }
 }
