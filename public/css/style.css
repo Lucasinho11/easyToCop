@@ -406,8 +406,11 @@
 }
 @media (max-width: 640px) {
     .pres-drops{
-        height: 60vh;
-        padding-top: 30vh; 
+        height: 40vh;
+        padding-top: 20vh; 
+    }
+    .all-drops{
+        height: 50vh;
     }
     .pres-drops > h1{
         font-size: 25px;
