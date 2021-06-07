@@ -738,12 +738,7 @@
 .div-contacts{
     text-align: center;
 }
-.google-map{
-    width: 60vw;
-    height: 40vh;
-    background-color: gray;
-    border-radius: 5px;
-}
+
 .contact-form > h1{
     font-size: 30px;
     font-weight: bold;
@@ -771,8 +766,10 @@
 
 }
 .names{
+    width:47vw ;
     display: flex;
     justify-content: space-between;
+    
 }
 .contact-form > div > form{
     padding: 20px;
@@ -781,7 +778,7 @@
     padding-top: 1%;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 16vw;
 
 }
 .email-send > textarea{
@@ -798,8 +795,11 @@
     font-size: 15px;
 }
 .div-button-email{
+    width: 47vw;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 @media (max-width: 640px) {
     .contact-form > div{

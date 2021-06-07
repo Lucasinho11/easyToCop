@@ -1,13 +1,39 @@
 @extends('layouts.default')
 @section('content')
 @include('partials.nav')
+<script>
+
+function initMap() {
+  const webstart = { lat: 48.8704843, lng: 2.3608514};
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 15,
+    center: webstart,
+  });
+
+  const marker = new google.maps.Marker({
+    position: webstart,
+    map: map,
+  });
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?=env('API_KEY')?>&callback=initMap&libraries=&v=weekly" async></script>
+<style>
+#map {
+    width: 60vw;
+    height: 40vh;
+    z-index: -1;
+
+}
+</style>
 <div class="all-contacts">
     <div class="div-contacts">
         <p>📍Adresse: 19 rue Yves Toudic 75010 Paris</p>
         <p>✉️Email: contact@ecole-webstart.com</p>
         <p>📞Tél: 01 42 41 97 76</p>
     </div>
-    <div class="google-map">
+    <div id="map">
 
     </div>
     <div class="contact-form">
