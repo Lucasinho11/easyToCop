@@ -16,9 +16,10 @@ class DropsController extends Controller
         return view('drops', ['drops' => $drops] );
         
     }
-    public function drop()
+    public function drop($id)
     {
-        return view('drop');
+        $drop =  Drops::where('id', $id)->get();
+        return view('drop', ['drop' => $drop]);
     }
 
 }
