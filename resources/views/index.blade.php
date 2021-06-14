@@ -10,7 +10,7 @@
     </p>
     <br>
     <br>
-        <a href="#" class="buttons-subs-index">
+        <a href="/subs" class="buttons-subs-index">
             Voir les abonnements
         </a>
 

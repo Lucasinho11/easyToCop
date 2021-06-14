@@ -24,3 +24,9 @@ Route::get('/contacts', 'App\Http\Controllers\ContactsController@index');
 Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/user', 'App\Http\Controllers\UserController@index');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
