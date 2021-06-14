@@ -89,7 +89,7 @@
                       <form method="POST" action="{{ route('logout') }}">
                         @csrf
 
-                        <x-responsive-nav-link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2"
+                        <x-responsive-nav-link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1" style="font-size: 80%; color: red"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             Déconnexion

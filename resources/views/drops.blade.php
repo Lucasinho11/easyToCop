@@ -5,20 +5,24 @@
     <h1>Tous les prochains drops</h1>
 </div>
 <div class="all-drops">
+@foreach ($drops as $drop)
     <div class="drop-date">
-        <h1>Samedi 24 Avril</h1>
-    </div>
-    <a href="/drops/1">
-        <div class="drop">
-            <div>
-                <p>NIKE AIR JORDAN 4 RETRO</p>
-                <h1>MILITARY BLUE</h1>
-            </div>
-            <div class="img-drop">
-                    <img class="img-drop-img" src="/img/aj4.png"  alt="">
-            </div>
+            <h1>{{Carbon\Carbon::parse($drop->dropTime)->translatedFormat('d M Y')}}</h1>
             
-        </div>
-    </a>
+    </div>
+        <a href="/drops/{{$drop->id}}">
+            <div class="drop">
+                <div>
+                    <p>{{$drop->label}}</p>
+                    <h1>{{$drop->name}}</h1>
+                </div>
+                <div class="img-drop">
+                        <img class="img-drop-img" src="/img/{{$drop->img}}"  alt="">
+                </div>
+                
+            </div>
+        </a>
+@endforeach
+    
 </div>
 @include('partials.footer')
