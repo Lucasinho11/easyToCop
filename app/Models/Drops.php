@@ -12,5 +12,7 @@ class Drops extends Model
         'name',
         'label',
         'dropTime',
+        'img',
+        'price'
     ];
 }

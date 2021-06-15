@@ -28,6 +28,10 @@ Route::get('/user', 'App\Http\Controllers\UserController@index');
 Route::post('/user', 'App\Http\Controllers\UserController@update');
 Route::post('/admin/drops/create', 'App\Http\Controllers\admin\DropsController@create');
 Route::get('/admin/drops/create', 'App\Http\Controllers\admin\DropsController@index');
+Route::get('/admin/drops/list', 'App\Http\Controllers\admin\DropsController@list');
+Route::get('/admin/drops/{id}/delete', 'App\Http\Controllers\admin\DropsController@delete');
+Route::get('/admin/drops/{id}/edit', 'App\Http\Controllers\admin\DropsController@edit');
+Route::post('/admin/drops/{id}/edit', 'App\Http\Controllers\admin\DropsController@editDrop');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
