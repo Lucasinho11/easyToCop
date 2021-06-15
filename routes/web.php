@@ -25,6 +25,8 @@ Route::get('/contacts', 'App\Http\Controllers\ContactsController@index');
 Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/user', 'App\Http\Controllers\UserController@index');
+Route::post('/user', 'App\Http\Controllers\UserController@update');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
