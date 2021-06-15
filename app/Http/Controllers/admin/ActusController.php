@@ -47,8 +47,14 @@ class ActusController extends Controller
         return redirect('/admin/actus/list');
     }
     public function edit( $id){
-        $actu = News::where('id',$id)->get();
-        return view('admin/actuEdit', ['actu' => $actu] );
+        if(Auth::user() && Auth::user()->is_admin){
+            $actu = News::where('id',$id)->get();
+            return view('admin/actuEdit', ['actu' => $actu] );
+        }
+        else{
+            return redirect('/');
+        }
+        
     }
     public function editActu(Request $request, $id){
         $request->validate([

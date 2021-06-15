@@ -52,8 +52,14 @@ class DropsController extends Controller
         return redirect('/admin/drops/list');
     }
     public function edit( $id){
-        $drop = Drops::where('id',$id)->get();
-        return view('admin/dropEdit', ['drop' => $drop] );
+        if(Auth::user() && Auth::user()->is_admin){
+            $drop = Drops::where('id',$id)->get();
+            return view('admin/dropEdit', ['drop' => $drop] );
+        }
+        else{
+            return redirect('/');
+        }
+        
     }
     public function editDrop(Request $request, $id){
         $request->validate([
