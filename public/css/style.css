@@ -386,6 +386,10 @@
     font-size: 20px;
     color: black;
 }
+.form-sub-drop{
+    display: flex;
+    justify-content: center;
+}
 .buttons-subs-drop{
     margin-top: 2vh;
     background-color: #5D19FF;
@@ -396,6 +400,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
+}
+.buttons-subs-drop > button{
+    width: 100%;
 }
 .img-drop > p{
     font-weight: bold;
