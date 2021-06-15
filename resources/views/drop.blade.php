@@ -43,7 +43,7 @@
                 <h1>{{$d->name}}</h1>
             </div>
             <div class="img-drop">
-                <img class="img-drop-img2" src="/img/{{$d->img}}"  alt="">
+                <img class="img-drop-img2" src="{{$d->img}}"  alt="">
                 <br><br>
                 <p>Prix: {{$d->price}}€</p>
                 <form action="" method="POST" class="form-sub-drop">

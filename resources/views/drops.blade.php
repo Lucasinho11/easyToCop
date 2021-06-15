@@ -17,7 +17,7 @@
                     <h1>{{$drop->name}}</h1>
                 </div>
                 <div class="img-drop">
-                        <img class="img-drop-img" src="/img/{{$drop->img}}"  alt="">
+                        <img class="img-drop-img" src="{{$drop->img}}"  alt="">
                 </div>
                 
             </div>

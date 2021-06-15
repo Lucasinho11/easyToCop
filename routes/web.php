@@ -26,7 +26,8 @@ Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/user', 'App\Http\Controllers\UserController@index');
 Route::post('/user', 'App\Http\Controllers\UserController@update');
-
+Route::post('/admin/drops/create', 'App\Http\Controllers\admin\DropsController@create');
+Route::get('/admin/drops/create', 'App\Http\Controllers\admin\DropsController@index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

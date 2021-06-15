@@ -9,7 +9,7 @@
                 <h1>{{$actu->name}}</h1>
             </div>
             <div class="actu-img">
-                <img class="img-actu" src="/img/{{$actu->img}}"  alt="">
+                <img class="img-actu" src="{{$actu->img}}"  alt="">
             </div>
             <div class="actu-more">
                 <a href="/actus/{{$actu->id}}"><p>Lire la suite</p></a>

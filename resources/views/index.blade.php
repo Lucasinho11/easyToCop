@@ -25,7 +25,7 @@
                     <p>{{$a->description}}<br><br>{{Carbon\Carbon::parse($a->created_at)->translatedFormat('d M Y')}}</p>
                 </div>
                 <div class="img-new">
-                    <img src="/img/{{$a->img}}"  alt="">
+                    <img src="{{$a->img}}"  alt="">
                 </div>
             </div>
         </div>
