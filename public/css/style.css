@@ -207,12 +207,16 @@
     font-size: 30px;
 }
 .description-new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin-left: 14%;
+    max-width: 25%;
 
 }
 .description-new>p{
-    margin-top: 35%;
 }
 .img-new > img{
     width: 100%;

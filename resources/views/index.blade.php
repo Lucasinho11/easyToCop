@@ -17,17 +17,19 @@
 </div>
 <div class="top5-news">
     <h1>Les dernières news:</h1>
-    <div class="new-actu">
-        <h2>La nouvelle air jordan 4 !</h2>
-        <div class="details-actu">
-            <div class="description-new">
-                <p>La jordan 4 military blue sort<br> prochainement. Ne la rate pas !<br><br> 18/04/2021</p>
-            </div>
-            <div class="img-new">
-                <img src="/img/aj4.png"  alt="">
+    @foreach ($actus as $a)
+        <div class="new-actu">
+            <h2>{{$a->name}}</h2>
+            <div class="details-actu">
+                <div class="description-new">
+                    <p>{{$a->description}}<br><br>{{Carbon\Carbon::parse($a->created_at)->translatedFormat('d M Y')}}</p>
+                </div>
+                <div class="img-new">
+                    <img src="/img/{{$a->img}}"  alt="">
+                </div>
             </div>
         </div>
-    </div>
+    @endforeach
 </div>
 <br>
 <br>
