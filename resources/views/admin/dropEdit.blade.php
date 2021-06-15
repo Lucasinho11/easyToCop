@@ -43,8 +43,8 @@
             @enderror
         </div>
     @endforeach
-        <a href="#" class="button-login">
-            <button type="submit">
+        <a href="" class="button-login">
+            <button type="submit" style="width: 100%">
                 enregistrer
             </button>
         </a>

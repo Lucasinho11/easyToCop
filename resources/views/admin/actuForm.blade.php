@@ -3,7 +3,7 @@
 @section('content')
 @include('partials.nav')
 <div class="all-login">
-    <h1>Ajouter un drop</h1>
+    <h1>Ajouter une actualité</h1>
     <form action="" method="POST" enctype="multipart/form-data">
         @csrf
     <div class="mb-3 pt-0">
@@ -14,22 +14,8 @@
         @enderror
     </div>
     <div class="mb-3 pt-0">
-        <input type="text" placeholder="label" name="label" class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full"/>
-        @error('label')
-            <p style="color: red">{{$message}}</p>
-                    
-        @enderror
-    </div>
-    <div class="mb-3 pt-0">
-        <input type="number" placeholder="prix" name="price" class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full"/>
-        @error('price')
-            <p style="color: red">{{$message}}</p>
-                    
-        @enderror
-    </div>
-    <div class="mb-3 pt-0">
-        <input type="date" placeholder="" name="dropTime" class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full"/>
-        @error('dropTime')
+        <textarea placeholder="description" name="description" class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" rows="4"></textarea>
+        @error('description')
             <p style="color: red">{{$message}}</p>
                     
         @enderror

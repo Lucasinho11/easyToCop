@@ -32,6 +32,12 @@ Route::get('/admin/drops/list', 'App\Http\Controllers\admin\DropsController@list
 Route::get('/admin/drops/{id}/delete', 'App\Http\Controllers\admin\DropsController@delete');
 Route::get('/admin/drops/{id}/edit', 'App\Http\Controllers\admin\DropsController@edit');
 Route::post('/admin/drops/{id}/edit', 'App\Http\Controllers\admin\DropsController@editDrop');
+Route::post('/admin/actus/create', 'App\Http\Controllers\admin\ActusController@create');
+Route::get('/admin/actus/create', 'App\Http\Controllers\admin\ActusController@index');
+Route::get('/admin/actus/list', 'App\Http\Controllers\admin\ActusController@list');
+Route::get('/admin/actus/{id}/delete', 'App\Http\Controllers\admin\ActusController@delete');
+Route::get('/admin/actus/{id}/edit', 'App\Http\Controllers\admin\ActusController@edit');
+Route::post('/admin/actus/{id}/edit', 'App\Http\Controllers\admin\ActusController@editActu');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
