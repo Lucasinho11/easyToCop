@@ -29,9 +29,9 @@ function initMap() {
 </style>
 <div class="all-contacts">
     <div class="div-contacts">
-        <p>📍Adresse: 19 rue Yves Toudic 75010 Paris</p>
-        <p>✉️Email: contact@ecole-webstart.com</p>
-        <p>📞Tél: 01 42 41 97 76</p>
+        <p>📍Adresse: {{$adress}}</p>
+        <p>✉️Email: {{$mail}}</p>
+        <p>📞Tél: {{$phone}}</p>
     </div>
     <div id="map">
 
