@@ -86,15 +86,19 @@
                     @auth
                       <h1 class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0" style="font-weight: bold;">{{ Auth::user()->name }}</h1>
                       <a href="/user" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Mon compte</a>
-                      <form method="POST" action="{{ route('logout') }}">
-                        @csrf
+                      @if(Auth::user() && Auth::user()->is_admin)
+                        <a href="/admin" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Page Admin</a>
+                      @endif
+                        <form method="POST" action="{{ route('logout') }}">
+                          @csrf
 
-                        <x-responsive-nav-link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1" style="font-size: 80%; color: red"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            Déconnexion
-                        </x-responsive-nav-link>
-                      </form>
+                          <x-responsive-nav-link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1" style="font-size: 80%; color: red"
+                                  onclick="event.preventDefault();
+                                              this.closest('form').submit();">
+                              Déconnexion
+                          </x-responsive-nav-link>
+                        </form>
+                      
                     @else
                         <a href="{{ route('login') }}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Se connecter</a>
 

@@ -26,6 +26,8 @@ Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/user', 'App\Http\Controllers\UserController@index');
 Route::post('/user', 'App\Http\Controllers\UserController@update');
+
+Route::get('/admin', 'App\Http\Controllers\admin\IndexController@index');
 Route::post('/admin/drops/create', 'App\Http\Controllers\admin\DropsController@create');
 Route::get('/admin/drops/create', 'App\Http\Controllers\admin\DropsController@index');
 Route::get('/admin/drops/list', 'App\Http\Controllers\admin\DropsController@list');
@@ -38,6 +40,14 @@ Route::get('/admin/actus/list', 'App\Http\Controllers\admin\ActusController@list
 Route::get('/admin/actus/{id}/delete', 'App\Http\Controllers\admin\ActusController@delete');
 Route::get('/admin/actus/{id}/edit', 'App\Http\Controllers\admin\ActusController@edit');
 Route::post('/admin/actus/{id}/edit', 'App\Http\Controllers\admin\ActusController@editActu');
+
+Route::get('/admin/users/list', 'App\Http\Controllers\admin\UsersController@list');
+Route::post('/admin/users/create', 'App\Http\Controllers\admin\UsersController@create');
+Route::get('/admin/users/create', 'App\Http\Controllers\admin\UsersController@index');
+Route::get('/admin/users/{id}/delete', 'App\Http\Controllers\admin\UsersController@delete');
+Route::get('/admin/users/{id}/edit', 'App\Http\Controllers\admin\UsersController@edit');
+Route::post('/admin/users/{id}/edit', 'App\Http\Controllers\admin\UsersController@editUser');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
