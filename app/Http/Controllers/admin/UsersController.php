@@ -22,8 +22,14 @@ class UsersController extends Controller
         }
     }
     public function delete($id){
-        $user = User::where('id',$id)->delete();
-        return redirect('/admin/users/list');
+        if(Auth::user() && Auth::user()->is_admin){
+            $user = User::where('id',$id)->delete();
+            return redirect('/admin/users/list');
+        }
+        else{
+            return redirect('/');
+        }
+        
     }
     public function edit( $id){
         if(Auth::user() && Auth::user()->is_admin){

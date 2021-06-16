@@ -3,6 +3,7 @@
 @section('content')
 @include('partials.nav')
 <div class="table w-full p-2" style="height: 80vh; padding-top: 10%">
+    <a href="/admin" style="color: blue">Menu Admin</a>
     <h1 style="text-align: center; font-weight: bold; font-size: 30px">Tableau des drops</h1>
     <div style="display: flex; justify-content: center">
         <a href="/admin/drops/create">

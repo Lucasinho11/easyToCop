@@ -43,8 +43,14 @@ class ActusController extends Controller
         }
     }
     public function delete($id){
-        $actu = News::where('id',$id)->delete();
+        if(Auth::user() && Auth::user()->is_admin){
+            $actu = News::where('id',$id)->delete();
         return redirect('/admin/actus/list');
+        }
+        else{
+            return redirect('/');
+        }
+        
     }
     public function edit( $id){
         if(Auth::user() && Auth::user()->is_admin){

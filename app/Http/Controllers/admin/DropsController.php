@@ -48,8 +48,14 @@ class DropsController extends Controller
         }
     }
     public function delete($id){
-        $drop = Drops::where('id',$id)->delete();
-        return redirect('/admin/drops/list');
+        if(Auth::user() && Auth::user()->is_admin){
+            $drop = Drops::where('id',$id)->delete();
+            return redirect('/admin/drops/list');
+        }
+        else{
+            return redirect('/');
+        }
+        
     }
     public function edit( $id){
         if(Auth::user() && Auth::user()->is_admin){
