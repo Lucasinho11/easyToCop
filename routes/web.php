@@ -48,6 +48,8 @@ Route::get('/admin/users/{id}/delete', 'App\Http\Controllers\admin\UsersControll
 Route::get('/admin/users/{id}/edit', 'App\Http\Controllers\admin\UsersController@edit');
 Route::post('/admin/users/{id}/edit', 'App\Http\Controllers\admin\UsersController@editUser');
 
+Route::post('/subs', [App\Http\Controllers\SubsController::class, 'store']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

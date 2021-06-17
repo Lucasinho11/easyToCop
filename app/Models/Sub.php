@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Drops extends Model
+class Sub extends Model
 {
     use HasFactory;
     protected $fillable = [
         'name',
-        'label',
-        'dropTime',
-        'img',
-        'price',
-        'img_id'
+        'description',
+        'price'
     ];
 }

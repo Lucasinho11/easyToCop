@@ -653,6 +653,31 @@
     font-size: 30px;
     font-weight: bold;
 }
+.mt-2 > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+  }
+.checked{
+    border: 8px solid #5D19FF;
+  }
+  .div-radio{
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+
+  }
 @media (max-width: 640px) {
     .subs-container{
         display: flex;

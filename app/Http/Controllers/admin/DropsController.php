@@ -19,13 +19,16 @@ class DropsController extends Controller
             'img' => 'required|mimes:jpeg,png,jpg',
             'dropTime'=>'required|date|date_format:Y-m-d|after:today'
         ]);
-        $uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
+        //$uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
+        $result = $request->img->storeOnCloudinary();
+            //$uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
         $drop = Drops::create([
             'name' => $request->name,
             'label' => $request->label,
             'dropTime'=> $request->dropTime,
             'price'=>$request->price,
-            'img' => $uploadedFileUrl,
+            'img' => $result->getSecurePath(),
+            'img_id'=>$result->getPublicId() 
         ]);
         return redirect('/admin/drops/list');
 
@@ -49,7 +52,13 @@ class DropsController extends Controller
     }
     public function delete($id){
         if(Auth::user() && Auth::user()->is_admin){
-            $drop = Drops::where('id',$id)->delete();
+            $drop = Drops::where('id',$id)->get();
+            foreach($drop as $d){
+                $image = $d->img_id;
+            }
+            $result = cloudinary()->destroy($image);
+            $dropDelete = Drops::where('id',$id)->delete();
+
             return redirect('/admin/drops/list');
         }
         else{
@@ -76,8 +85,9 @@ class DropsController extends Controller
             'dropTime'=>'required|date|date_format:Y-m-d|after:today'
         ]);
         if($request->img){
-            $uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
-            $dropEdited = Drops::find($id)->update(['name' => $request->name,'label' => $request->label, 'price' => $request->price, 'img' => $uploadedFileUrl ,'dropTime' => $request->dropTime ]);
+            $result = $request->img->storeOnCloudinary();
+            //$uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
+            $dropEdited = Drops::find($id)->update(['name' => $request->name,'label' => $request->label, 'price' => $request->price, 'img' => $result->getSecurePath() ,'img_id'=>$result->getPublicId() ,'dropTime' => $request->dropTime ]);
         }
         else{
             $dropEdited = Drops::find($id)->update(['name' => $request->name,'label' => $request->label, 'price' => $request->price, 'dropTime' => $request->dropTime ]);

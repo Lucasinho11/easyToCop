@@ -19,8 +19,10 @@ class CreateDropsTable extends Migration
             $table->string('name');
             $table->string('label');
             $table->string('img');
+            $table->string('img_id');
             $table->integer('price');
             $table->dateTime('dropTime');
+
         });
     }
 

@@ -16,11 +16,12 @@ class ActusController extends Controller
             'description' => 'required|string|max:255',
             'img' => 'required|mimes:jpeg,png,jpg',
         ]);
-        $uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
+        $result = $request->img->storeOnCloudinary();
         $actu = News::create([
             'name' => $request->name,
             'description' => $request->description,
-            'img' => $uploadedFileUrl,
+            'img' => $result->getSecurePath() ,
+            'img_id'=>$result->getPublicId() 
         ]);
         return redirect('/admin/actus/list');
 
@@ -44,6 +45,11 @@ class ActusController extends Controller
     }
     public function delete($id){
         if(Auth::user() && Auth::user()->is_admin){
+            $ac = News::where('id',$id)->get();
+            foreach($ac as $a){
+                $image = $a->img_id;
+            }
+            $result = cloudinary()->destroy($image);
             $actu = News::where('id',$id)->delete();
         return redirect('/admin/actus/list');
         }
@@ -69,8 +75,9 @@ class ActusController extends Controller
             'img' => 'mimes:jpeg,png,jpg',
         ]);
         if($request->img){
-            $uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
-            $actuEdited = News::find($id)->update(['name' => $request->name,'description' => $request->description, 'img' => $uploadedFileUrl]);
+            $result = $request->img->storeOnCloudinary();
+            //$uploadedFileUrl = Cloudinary::upload($request->file('img')->getRealPath())->getSecurePath();
+            $actuEdited = News::find($id)->update(['name' => $request->name,'description' => $request->description, 'img' => $result->getSecurePath() ,'img_id'=>$result->getPublicId() ]);
         }
         else{
             $actuEdited = News::find($id)->update(['name' => $request->name,'description' => $request->description]);
