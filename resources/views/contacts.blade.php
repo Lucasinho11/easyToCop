@@ -39,29 +39,48 @@ function initMap() {
     <div class="contact-form">
         <h1>Contactez-nous!</h1>
         <div>
-            <form action="">
+            <form action="" method="post">
+                @csrf
                 <div class="names">
                     <div>
-                        <label for="first-name">Prénom:</label>
-                        <input type="text" name="first-name">
+                        <label for="first_name">Prénom:</label>
+                        <input type="text" name="first_name">
+                        @error('first_name')
+                            <p style="color: red">{{$message}}</p>
+                        @enderror
                     </div>
                     <div>
                         <label for="last-name">Nom:</label>
-                        <input type="text" name="last-name">
+                        <input type="text" name="last_name">
+                        @error('last_name')
+                            <p style="color: red">{{$message}}</p>
+                        @enderror
                     </div>
                 </div>
                 <div class="email-send">
                         <label for="email">Email:</label>
                         <input type="email" name="email">
+                        @error('email')
+                            <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="object">Objet:</label>
                         <input type="text" name="object">
+                        @error('object')
+                            <p style="color: red">{{$message}}</p>
+                        @enderror
                         <label for="msg-email">Message:</label>
-                        <textarea name="msg-email" id="" rows="3"></textarea>
+                        <textarea name="msg_email" id="" rows="3"></textarea>
+                        @error('msg_email')
+                            <p style="color: red">{{$message}}</p>
+                        @enderror
                 </div>
                 <br>
                 <div class="div-button-email">   
-                    <a href="#" class="buttons-send-email">
-                        Envoyer
+                    <a href="" class="buttons-send-email">
+                    <button type="submit" style="width:100%">
+                    Envoyer
+                    </button>
+                        
                     </a>
                     <br>
                 </div>

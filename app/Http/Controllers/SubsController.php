@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sub;
 
+use Illuminate\Support\Facades\Auth;
+
 class SubsController extends Controller
 {
     public function index(Request $request)
     {
         $subs = Sub::get();
-        $intent = $request->user()->createSetupIntent();
         $stripeKey = env('STRIPE_KEY');
+        $intent = $request->user()->createSetupIntent();
 
         return view('subs', compact('subs','intent', 'stripeKey'));
     }
@@ -21,20 +23,22 @@ class SubsController extends Controller
     }
     public function store(Request $request)
     {
+
         $request->validate([
             'name' => 'required',
             'payment_method' => 'required',
-            'sub' => 'required|exists:plans,id',
+            'sub' => 'required|exists:subs,id',
             'promo' => 'nullable'
         ]);
 
+        
         $sub = Sub::find($request->sub);
-
+            
         try {
             $subscription = $request
                 ->user()
                 ->newSubscription('default', $sub->stripe_id)
-                ->withCoupon($request->coupon)
+                ->withCoupon($request->promo)
                 ->create($request->payment_method);
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return redirect()->route('cashier.payment', [
@@ -42,6 +46,6 @@ class SubsController extends Controller
             ]);
         }
 
-        return view('index');
+        return view('payments.success');
     }
 }

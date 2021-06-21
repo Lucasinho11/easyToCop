@@ -22,6 +22,7 @@ Route::get('/actus/{id}', 'App\Http\Controllers\ActusController@actu');
 Route::get('/subs', 'App\Http\Controllers\SubsController@index');
 Route::get('/subs/{id}', 'App\Http\Controllers\SubsController@sub');
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@index');
+Route::post('/contacts', 'App\Http\Controllers\ContactsController@sendEmail');
 Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/user', 'App\Http\Controllers\UserController@index');
@@ -48,8 +49,9 @@ Route::get('/admin/users/{id}/delete', 'App\Http\Controllers\admin\UsersControll
 Route::get('/admin/users/{id}/edit', 'App\Http\Controllers\admin\UsersController@edit');
 Route::post('/admin/users/{id}/edit', 'App\Http\Controllers\admin\UsersController@editUser');
 
-Route::post('/subs', [App\Http\Controllers\SubsController::class, 'store']);
+Route::post('/subs', 'App\Http\Controllers\SubsController@store');
 
+Route::view('/payment/error', 'payments.error')->name('payments.error');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

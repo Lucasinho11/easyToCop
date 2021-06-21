@@ -76,6 +76,7 @@
               Abonnement
             </h3>
             <div class="div-radio">
+            
                 <form method="post" id="payment-form">
                     @csrf
 
@@ -85,10 +86,14 @@
                             <label for="{{$sub->id}}">Abonnement {{ $sub->name }} ({{ $sub->price }} €)</label>
                         </div>
                     @endforeach
+                    @error('sub')
+                        <p style="color: red">{{$message}}</p>
+                        
+                    @enderror
                     <br>
                     <div class="mb-3 pt-0">
                         <label for="name">Nom</label>
-                        <input type="text" placeholder="name" name="name" class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full"/>
+                        <input type="text" placeholder="name" name="name" id="name" class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full"/>
                         @error('name')
                             <p style="color: red">{{$message}}</p>
                                     
@@ -107,18 +112,19 @@
                         @enderror
                     </div>
 
-                </form>
+                
             </div>
           </div>
         </div>
       </div>
       <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="submit" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm" style="background-color: #5D19FF;">
+        <button type="submit" id="card-button" data-secret="{{ $intent->client_secret }}" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm" style="background-color: #5D19FF;">
           Payer
         </button>
         <button type="button" id="cancel-button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
           Cancel
         </button>
+        </form>
       </div>
     </div>
   </div>
@@ -135,7 +141,7 @@
                 document.getElementById("modal").classList.toggle("hidden");
             }
 
-            const stripe = Stripe('{{ $stripeKey }}');
+    const stripe = Stripe('{{ $stripeKey }}');
     const elements = stripe.elements();
 
     const card = elements.create("card");
@@ -174,7 +180,7 @@ form.addEventListener('submit', async (e) => {
         displayError.textContent = error.message;
     } else {
         displayError.textContent = '';
-        //console.log(setupIntent);
+        console.log(setupIntent);
         
         let paymentMethod = document.createElement('input');
         paymentMethod.setAttribute('type', 'hidden');
