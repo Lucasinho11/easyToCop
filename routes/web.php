@@ -19,13 +19,13 @@ Route::get('/drops/{id}', 'App\Http\Controllers\DropsController@drop');
 Route::post('/drops/{id}', 'App\Http\Controllers\DropsController@dropRegistering');
 Route::get('/actus', 'App\Http\Controllers\ActusController@index');
 Route::get('/actus/{id}', 'App\Http\Controllers\ActusController@actu');
-Route::get('/subs', 'App\Http\Controllers\SubsController@index');
+Route::get('/subs', 'App\Http\Controllers\SubsController@index')->name('subs');
 Route::get('/subs/{id}', 'App\Http\Controllers\SubsController@sub');
 Route::get('/contacts', 'App\Http\Controllers\ContactsController@index');
 Route::post('/contacts', 'App\Http\Controllers\ContactsController@sendEmail');
 Route::get('/register', 'App\Http\Controllers\LoginController@register');
 Route::get('/login', 'App\Http\Controllers\LoginController@login');
-Route::get('/user', 'App\Http\Controllers\UserController@index');
+Route::get('/user', 'App\Http\Controllers\UserController@index')->name('user');
 Route::post('/user', 'App\Http\Controllers\UserController@update');
 
 Route::get('/admin', 'App\Http\Controllers\admin\IndexController@index');

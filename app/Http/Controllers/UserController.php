@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -13,7 +14,9 @@ class UserController extends Controller
     public function index()
     {
             $error = '';
-        return view('user', ['error' => $error ]);
+            $subscription = DB::table('subscriptions')->where('user_id',Auth::user()->id )->first();
+            $sub = DB::table('subs')->where('stripe_id',$subscription->stripe_plan )->first();
+            return view('user', ['error' => $error , 'sub' => $sub]);
     }
     public function update(Request $request)
     {
