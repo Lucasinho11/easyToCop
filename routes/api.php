@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('auth/register', 'App\Http\Controllers\API\RegisterController@register');
+Route::post('auth/login', 'App\Http\Controllers\API\LoginController@login');
+Route::middleware('auth:sanctum')->get('auth/user', 'App\Http\Controllers\API\UserController@me');
+Route::middleware('auth:sanctum')->get('auth/logout', 'App\Http\Controllers\API\LoginController@logout');
+
+Route::get('/drops', 'App\Http\Controllers\API\DropsController@index');
+Route::get('/drops/{id}', 'App\Http\Controllers\API\DropsController@drop');
+Route::get('/actus', 'App\Http\Controllers\API\ActusController@index');
+Route::get('/actus/{id}', 'App\Http\Controllers\API\ActusController@actu');

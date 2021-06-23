@@ -35,11 +35,8 @@
         
             <h2>Votre abonnement ({{$sub->name}})</h2>
             <div class="div-edit-sub">
-                <a href="{{Auth::user()->billingPortalUrl(route('user'))}}">Modifier la méthode de paiement</a>
-                <a href="">Changer d'abonnement</a>
-                <a href="">Suspendre l'abonnement</a>
+                <a href="{{Auth::user()->billingPortalUrl(route('user'))}}">Modifier l'abonnement</a>
             </div>
-            <a href="" class="annul-sub">Annuler l'abonnement</a><br>
             <a href="">Télécharger la facture</a>
             <a href="#" class="button-edit-sub">
                 <button type="submit" style="width: 100%;">
