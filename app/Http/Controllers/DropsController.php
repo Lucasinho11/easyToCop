@@ -13,7 +13,7 @@ class DropsController extends Controller
     public function index()
     {
         
-        $drops = Drops::get();
+        $drops = Drops::orderBy('dropTime', 'DESC')->get();
 
         return view('drops', ['drops' => $drops] );
         
