@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\Drops;
 use App\Models\DropsRegistrations;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 
 class DropsController extends Controller
 {
     public function index()
     {
         $drops = Drops::get();
+        foreach($drops as $d){
+            $d->dropTime = Carbon::parse($d->dropTime)->translatedFormat('d M Y');
+        }
         return response()->json([
             "success" => true ,
             $drops
