@@ -13,6 +13,9 @@ class UserController extends Controller
 {
     public function index()
     {
+            if(!Auth::user()){
+                return redirect('/login');
+            }
             $error = '';
             $subscription = DB::table('subscriptions')->where('user_id',Auth::user()->id )->first();
             $sub = DB::table('subs')->where('stripe_id',$subscription->stripe_plan )->first();
