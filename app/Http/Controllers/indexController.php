@@ -9,7 +9,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        //test
         $actus = News::orderBy('created_at', 'DESC')->take(5)->get();
         return view('index', ['actus' => $actus] );
     }
