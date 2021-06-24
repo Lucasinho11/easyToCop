@@ -16,10 +16,14 @@ class UserController extends Controller
             if(!Auth::user()){
                 return redirect('/login');
             }
+            if(Auth::user()->stripe_id){
+                $error = '';
+                $subscription = DB::table('subscriptions')->where('user_id',Auth::user()->id )->first();
+                $sub = DB::table('subs')->where('stripe_id',$subscription->stripe_plan )->first();
+                return view('user', ['error' => $error , 'sub' => $sub]);
+            }
             $error = '';
-            $subscription = DB::table('subscriptions')->where('user_id',Auth::user()->id )->first();
-            $sub = DB::table('subs')->where('stripe_id',$subscription->stripe_plan )->first();
-            return view('user', ['error' => $error , 'sub' => $sub]);
+            return view('user', ['error' => $error]);
     }
     public function update(Request $request)
     {
