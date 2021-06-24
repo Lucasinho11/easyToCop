@@ -23,7 +23,8 @@ class UserController extends Controller
                 return view('user', ['error' => $error , 'sub' => $sub]);
             }
             $error = '';
-            return view('user', ['error' => $error]);
+            $sub =null;
+            return view('user', ['error' => $error, 'sub'=>$sub]);
     }
     public function update(Request $request)
     {
