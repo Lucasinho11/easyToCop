@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\News;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'App\Http\Controllers\IndexController@home')->name('index');
+Route::get('/', function () {
+    $actus = News::orderBy('created_at', 'DESC')->take(5)->get();
+    return view('index', ['actus' => $actus] );
+})->name('index');
+
 Route::get('/drops', 'App\Http\Controllers\DropsController@index');
 Route::get('/drops/{id}', 'App\Http\Controllers\DropsController@drop');
 Route::post('/drops/{id}', 'App\Http\Controllers\DropsController@dropRegistering');
