@@ -27,7 +27,7 @@ class RegisterController extends Controller
         $exists = User::where('email', $request->email)->exists();
 
         if ($exists) {
-            return response()->json(["error" => "You are already registered. Please login instead."], 409);
+            return response()->json(["msg" => "You are already registered. Please login instead."], 409);
         }
         $user = User::create([
             'email' => $request->email,

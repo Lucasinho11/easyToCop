@@ -13,6 +13,7 @@
                 @csrf
                 <div class="mb-3 pt-0">
                     <x-input id="email" type="email" placeholder="email" class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:ring w-full" name="email" value="{{ old('email') }}" required autofocus/>
+                    
                 </div>
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
