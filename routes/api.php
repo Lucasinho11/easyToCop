@@ -24,5 +24,5 @@ Route::get('/drops/{id}', 'App\Http\Controllers\API\DropsController@drop');
 Route::get('/actus', 'App\Http\Controllers\API\ActusController@index');
 Route::get('/actus/{id}', 'App\Http\Controllers\API\ActusController@actu');
 
-Route::middleware('auth:sanctum')->post('stripe/intent', 'App\Http\Controllers\API\StripeController@intent');
-Route::middleware('auth:sanctum')->post('stripe/subscribe', 'App\Http\Controllers\API\StripeController@subscribe');
+Route::post('stripe/intent', 'App\Http\Controllers\API\StripeController@intent');
+Route::post('stripe/subscribe', 'App\Http\Controllers\API\StripeController@subscribe');
