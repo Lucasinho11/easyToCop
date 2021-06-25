@@ -10,14 +10,16 @@ use App\Mail\sendMail;
 class ApiController extends Controller
 {
     public function sendEmail(Request $request){
-        $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'object' => 'required|string|max:255',
-            'msg_email'=>'required|min:3|max:1000'
-        ]);
+        if(!$request->email || !$request->first_name || !$request->last_name || !$request->msg_email || !$request->object){
+            return response()->json([
+                "success"=> false,
+                "msg"=> "Veuillez remplir tous les champs"
+            ], 400);
+        }
         Mail::to('f519cb4802-1671dd@inbox.mailtrap.io')->send(new sendMail($request));
-        return redirect('/contacts');
+        return response()->json([
+            "success" => true,
+            "msg" => "Mail envoyé"
+        ], 200);
     }
 }
