@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -26,11 +27,10 @@ class UserController extends Controller
                 "msg"=> "Veuillez remplir tous les champs"
             ], 400);
         }
-        $id = Auth::user()->id;
-        $user = User::find($id)->update(['name' => $request->name,'password' => Hash::make($request->password), 'email'=> $request->email ]); 
+        $user = User::where('email', $request->email)->update(['name' => $request->name,'password' => Hash::make($request->password) ]); 
         return response()->json([
             "success" => true,
-            "msg" => "Modifications enregistrées"
+            "msg" => "Compte modifié"
         ], 200);
     }
 
