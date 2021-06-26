@@ -32,10 +32,12 @@
                     <p style="color: red"> {{$error}}</p>
                 @endif
             </div>
-                <h2>Votre abonnement</h2>
-                <div class="div-edit-sub">
-                    <a href="{{Auth::user()->billingPortalUrl(route('user'))}}">Modifier l'abonnement</a>
-                </div>
+                @if(Auth::user()->stripe_id)
+                    <h2>Votre abonnement</h2>
+                    <div class="div-edit-sub">
+                        <a href="{{Auth::user()->billingPortalUrl(route('user'))}}">Modifier l'abonnement</a>
+                    </div>
+                @endif
                 <a href="">Télécharger la facture</a>
             <a href="" class="button-edit-sub">
                 <button type="submit" style="width: 100%;">

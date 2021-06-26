@@ -43,7 +43,6 @@ class UserController extends Controller
                 'password' => ['required', Rules\Password::defaults()],
         ]);
         }
-       
         $id = Auth::user()->id;
         if (Hash::check($request->password, Auth::user()->password)) {
             if(!$request->name){
