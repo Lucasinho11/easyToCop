@@ -48,7 +48,8 @@ class SubsController extends Controller
         //         $request->promo = null;
         //     }
         // }
-        if(Auth::user()->stripe_id){
+        $subscription= DB::table('subscriptions')->where('user_id', Auth::user()->id)->first();
+        if($subscription){
             return view('payments.already');
         }
         $user= DB::table('users')->where('id', Auth::user()->id)->first();

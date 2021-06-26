@@ -32,13 +32,11 @@
                     <p style="color: red"> {{$error}}</p>
                 @endif
             </div>
-            @if($sub)
                 <h2>Votre abonnement</h2>
                 <div class="div-edit-sub">
                     <a href="{{Auth::user()->billingPortalUrl(route('user'))}}">Modifier l'abonnement</a>
                 </div>
                 <a href="">Télécharger la facture</a>
-            @endif
             <a href="" class="button-edit-sub">
                 <button type="submit" style="width: 100%;">
                     Enregistrer

@@ -20,7 +20,7 @@ class UserController extends Controller
                 $error = '';
                 $subscription = DB::table('subscriptions')->where('user_id',Auth::user()->id )->first();
                 $sub = DB::table('subs')->where('stripe_id',$subscription->stripe_plan )->first();
-                return view('user', ['error' => $error , 'sub' => $sub]);
+                return view('user', ['error' => $error]);
             }
             $error = '';
             $sub =null;
@@ -58,7 +58,7 @@ class UserController extends Controller
             if($request->email == Auth::user()->email){
                 $user = User::find($id)->update(['name' => $request->name,'password' => Hash::make($request->password) ]); 
                 $error = '';
-                return view('user', ['error' => $error ]);
+                return view('user', ['error' => $error]);
             }
             //$user = User::whereId($id)->update($request->all());
             $user = User::find($id)->update(['name' => $request->name,'email' => $request->email,'password' => Hash::make($request->password) ]); 
@@ -66,7 +66,7 @@ class UserController extends Controller
         }
         else{
             $error = 'Password not valid';
-            return view('user', ['error' => $error ]);
+            return view('user', ['error' => $error]);
         }
         
     }
