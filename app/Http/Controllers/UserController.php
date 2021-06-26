@@ -62,7 +62,8 @@ class UserController extends Controller
             }
             //$user = User::whereId($id)->update($request->all());
             $user = User::find($id)->update(['name' => $request->name,'email' => $request->email,'password' => Hash::make($request->password) ]); 
-            return view('user');
+            $error = '';
+            return view('user',['error' => $error]);
         }
         else{
             $error = 'Password not valid';
