@@ -45,15 +45,6 @@ class UserController extends Controller
         }
         $id = Auth::user()->id;
         if (Hash::check($request->password, Auth::user()->password)) {
-            if(!$request->name){
-                $request->name = Auth::user()->name;
-            }
-            if(!$request->password){
-                $request->name = Auth::user()->password;
-            }
-            if(!$request->email){
-                $request->name = Auth::user()->email;
-            }
             if($request->email == Auth::user()->email){
                 $user = User::find($id)->update(['name' => $request->name,'password' => Hash::make($request->password) ]); 
                 $error = '';

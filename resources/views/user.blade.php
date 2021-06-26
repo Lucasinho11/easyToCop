@@ -37,8 +37,9 @@
                     <div class="div-edit-sub">
                         <a href="{{Auth::user()->billingPortalUrl(route('user'))}}">Modifier l'abonnement</a>
                     </div>
+                
+                    <a href="">Télécharger la facture</a>
                 @endif
-                <a href="">Télécharger la facture</a>
             <a href="" class="button-edit-sub">
                 <button type="submit" style="width: 100%;">
                     Enregistrer
