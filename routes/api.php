@@ -27,3 +27,4 @@ Route::get('/actus/{id}', 'App\Http\Controllers\API\ActusController@actu');
 Route::post('stripe/intent', 'App\Http\Controllers\API\StripeController@intent');
 Route::post('stripe/subscribe', 'App\Http\Controllers\API\StripeController@subscribe');
 Route::post('/mail', 'App\Http\Controllers\API\ApiController@sendEmail');
+Route::post('/user', 'App\Http\Controllers\API\UserController@update');
