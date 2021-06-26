@@ -13,7 +13,7 @@ class DropsController extends Controller
 {
     public function index()
     {
-        $drops = Drops::get();
+        $drops = Drops::orderBy('dropTime', 'ASC')->get();
         foreach($drops as $d){
             $d->dropTime = Carbon::parse($d->dropTime)->translatedFormat('d M Y');
         }
