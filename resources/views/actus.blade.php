@@ -17,8 +17,9 @@
             </div>
         </div>
         <br>
+        
     @endforeach
-
+    {{ $actus->onEachSide(1)->links() }}
 </div>
 <br><br>
 
