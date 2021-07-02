@@ -134,4 +134,8 @@
     document.getElementById('button-user').onclick = function(){
                 document.getElementById("menu-user").classList.toggle("hidden");
             }
+    var widthWindow = window.innerWidth;
+    if(widthWindow <= 600){
+        window.location.replace("https://easy2copvue.herokuapp.com/tabs/");
+    }
 </script>
