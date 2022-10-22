@@ -17,7 +17,7 @@ class subMail extends Mailable
      *
      * @return void
      */
-    public function __construct($user, $sub )
+    public function __construct($user, $sub)
     {
         $this->user = $user;
         $this->sub = $sub;
@@ -30,6 +30,6 @@ class subMail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->user->email)->subject('Abonnement '.$this->sub->name)->view('email.subMail', ['user' => $this->user, 'sub' => $this->sub]);
+        return $this->from('contact@easytocop.fr')->subject('Abonnement' . $this->sub->name)->view('email.subMail', ['user' => $this->user, 'sub' => $this->sub]);
     }
 }
