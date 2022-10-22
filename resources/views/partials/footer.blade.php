@@ -24,6 +24,6 @@
             </div>
         </div>
         <br>
-        <p class="copyright">Copyright 2021 © EasyToCop réalisé par Lucas Lubasinski 🇵🇱</p>
+        <p class="copyright">Copyright 2021 © EasyToCop réalisé par Lucas Lubasinski</p>
     </div>
 </footer>
