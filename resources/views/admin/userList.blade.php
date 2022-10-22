@@ -43,7 +43,15 @@
                     </th>
                     <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
                         <div class="flex items-center justify-center">
-                            Admin
+                            Statut
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                            </svg>
+                        </div>
+                    </th>
+                    <th class="p-2 border-r cursor-pointer text-sm font-thin text-gray-500">
+                        <div class="flex items-center justify-center">
+                            Abonnement
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                             </svg>
@@ -70,7 +78,13 @@
                         @else
                             <td class="p-2 border-r">Non-Admin</td>
                         @endif
-                        
+                        @if($u->sub)
+                            <td class="p-2 border-r">
+                                <a href="{{$u->billingPortalUrl(route('user'))}}">{{$u->sub}}</a>
+                            </td>
+                        @else
+                            <td class="p-2 border-r">Aucun abonnement</td>
+                        @endif
                         <td>
                             <a href="/admin/users/{{$u->id}}/edit" class="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Modifier</a>
                             <a href="/admin/users/{{$u->id}}/delete" class="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Supprimer</a>

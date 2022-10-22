@@ -12,9 +12,10 @@ use App\Models\News;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     $actus = News::orderBy('created_at', 'DESC')->take(5)->get();
-    return view('index', ['actus' => $actus] );
+    return view('index', ['actus' => $actus]);
 })->name('index');
 
 Route::get('/drops', 'App\Http\Controllers\DropsController@index');
@@ -60,4 +61,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

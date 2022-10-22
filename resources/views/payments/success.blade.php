@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="payment">
-    <h1>Paiement accepté✅ </h1>
+    <h1>Paiement accepté ✅ </h1>
     <p>Un email a été envoyé sur votre adresse mail ({{Auth::user()->email}})</p>
     <a  href="/" class="button-sub" id="button-sub2">
         retour
