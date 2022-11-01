@@ -18,7 +18,7 @@ class CreateSubsTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-            $table->integer('price');
+            $table->string('price');
             $table->string('stripe_id');
         });
     }
