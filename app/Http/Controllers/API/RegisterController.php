@@ -12,16 +12,16 @@ class RegisterController extends Controller
 {
     public function register(Request $request)
     {
-        if(!$request->name || !$request->email || !$request->password){
+        if (!$request->name || !$request->email || !$request->password) {
             return response()->json([
-                "success"=> false,
-                "msg"=> "Veuillez remplir tous les champs"
+                "success" => false,
+                "msg" => "Veuillez remplir tous les champs"
             ], 400);
         }
-        if(strlen($request->password) < 8){
+        if (strlen($request->password) < 8) {
             return response()->json([
-                "success"=> false,
-                "msg"=> "Votre mot de passe doit contenir au moins 8 caractères"
+                "success" => false,
+                "msg" => "Votre mot de passe doit contenir au moins 8 caractères"
             ], 400);
         }
         $exists = User::where('email', $request->email)->exists();
@@ -42,6 +42,7 @@ class RegisterController extends Controller
             "token" => $token,
             "name" => $user->name,
             "email" => $user->email,
+            "stripe_id" => $user->stripe_id,
             "created_at" => $user->created_at
         ], 200);
     }

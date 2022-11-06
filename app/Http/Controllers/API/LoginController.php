@@ -11,10 +11,10 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        if(!$request->email || !$request->password){
+        if (!$request->email || !$request->password) {
             return response()->json([
-                "success"=> false,
-                "msg"=> "Veuillez remplir tous les champs"
+                "success" => false,
+                "msg" => "Veuillez remplir tous les champs"
             ], 400);
         }
         $user = User::where('email', $request->email)->first();
@@ -32,7 +32,8 @@ class LoginController extends Controller
         return response()->json([
             "token" => $token,
             "name" => $user->name,
-            "email" => $user->email
+            "email" => $user->email,
+            "stripe_id" => $user->stripe_id
         ], 200);
     }
     public function logout(Request $request)
